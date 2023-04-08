@@ -1,0 +1,64 @@
+@font-face {
+    font-family: graphik-regular;
+    src: url('../fonts/GraphikRegular.otf');
+}
+
+@font-face {
+    font-family: graphik-bold;
+    src: url('../fonts/GraphikBold.otf');
+}
+
+@font-face {
+    font-family: graphik-medium;
+    src: url('../fonts/GraphikMedium.otf');
+}
+
+@font-face {
+    font-family: graphik-light;
+    src: url('../fonts/GraphikLight.otf');
+}
+
+@font-face {
+    font-family: roboto-regular;
+    src: url('../fonts/RobotoMono-Regular.ttf');
+}
+
+@font-face {
+    font-family: roboto-bold;
+    src: url('../fonts/RobotoMono-Bold.ttf');
+}
+
+@font-face {
+    font-family: roboto-medium;
+    src: url('../fonts/RobotoMono-Medium.ttf');
+}
+
+@font-face {
+    font-family: roboto-light;
+    src: url('../fonts/RobotoMono-Light.ttf');
+}
+
+
+:root { 
+    --black-color: #000000;
+    --blue-color: #4353FF;
+    --dblue-color: #33348e;
+    --dark-dblue-color: #292a71;
+    --white-color: #FFFFFF;
+    --gray-color: #F5F5F5;
+
+    --extra-light-gray-color: #F1F2F2; 
+    --light-gray-color: #D8D8D8; 
+    --medium-gray-color: #A6A6A6; 
+    --dark-gray-color: #737373; 
+    --extra-dark-gray-color: #4C4C4C; 
+
+    --graphik-regular: graphik-regular, sans-serif;
+    --graphik-bold: graphik-bold, sans-serif;
+    --graphik-medium: graphik-medium, sans-serif;
+    --graphik-light: graphik-light, sans-serif;
+    --roboto-regular: roboto-regular, sans-serif;
+    --roboto-bold: roboto-bold, sans-serif;
+    --roboto-medium: roboto-medium, sans-serif;
+    --roboto-light: roboto-light, sans-serif;
+}

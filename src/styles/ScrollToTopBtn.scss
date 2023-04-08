@@ -1,0 +1,49 @@
+.scrollToTopBtn {
+    width: 3%;
+    height: 60px;
+    line-height: 60px;
+    background-color: var(--dblue-color);
+    color: var(--white-color);
+    text-align: center;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background-color .4s ease-in-out;
+
+    border: 0 none;
+
+    position: fixed;
+    bottom: 30px;
+    right: 30px;    
+    z-index: 20;
+
+    &:hover {
+        background-color: var(--dark-dblue-color);
+    }
+}
+
+@media screen and ( max-width: 1550px ) {
+    .scrollToTopBtn {
+        width: 4%;
+    }
+}
+
+@media screen and ( max-width: 1050px ) {
+    .scrollToTopBtn {
+        width: 6%;
+    }
+}
+
+@media screen and ( max-width: 700px ) {
+    .scrollToTopBtn {
+        width: 9%;
+    }
+}
+
+@media screen and ( max-width: 550px ) {
+    .scrollToTopBtn {
+        width: 12%;
+
+        bottom: 0;
+        right: 0;
+    }
+}
