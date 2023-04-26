@@ -1,10 +1,11 @@
 import React, { useContext }  from 'react';
-import { Context } from '../../context/Context';
+import { Context } from '../context/Context';
+
 import { Link } from "react-router-dom";
 
-import '../../styles/Main/ProductsItem.scss';
+import '../styles/Main/ProductsItem.scss';
 
-const ProductsItem = ({ item, id }) => {
+const ProductItem = ({ item, id }) => {
 
   const { onDetailView } = useContext(Context); 
 
@@ -21,4 +22,4 @@ const ProductsItem = ({ item, id }) => {
   )
 }
 
-export default ProductsItem
+export default ProductItem;

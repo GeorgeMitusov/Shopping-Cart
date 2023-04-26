@@ -1,4 +1,7 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../context/Context';
+
+import { motion } from 'framer-motion';
 import { useLocation, Routes, Route } from 'react-router-dom';
 import { AnimatePresence } from 'framer-motion';
 import { createBrowserHistory } from 'history';
@@ -7,16 +10,19 @@ import Header from './Header';
 import Main from './Main/Main';
 import About from './About';
 import Cart from './Cart';
-import Electronics from './categories/Electronics';
-import Jewelry from './categories/Jewelry';
-import MenClothing from './categories/MenClothing';
-import WomenClothing from './categories/WomenClothing';
+import Electronics from './categories/Electronics/Electronics';
+import Jewelry from './categories/Jewelry/Jewelry';
+import MenClothing from './categories/MenClo/MenClothing';
+import WomenClothing from './categories/WomenClo/WomenClothing';
 import DetailedView from './DetailedView';
 import ScrollToTopBtn from './ScrollToTopBtn';
 import Checkout from './Checkout/Checkout';
 import CheckoutForm from './Checkout/CheckoutForm';
+import FetchData from '../context/FetchData';
 
 const AnimatedRoutes = ({ error }) => {
+
+    const { orderSuccess } = useContext(Context); 
 
     const location = useLocation();
 
@@ -24,9 +30,11 @@ const AnimatedRoutes = ({ error }) => {
 
     return (
         <>
-            <Header />
+            { !orderSuccess && <Header />}
 
             <ScrollToTopBtn />
+
+            <FetchData />
 
             <AnimatePresence exitBeforeEnter>
 

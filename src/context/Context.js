@@ -42,6 +42,16 @@ const ContextDataProvider = ({ children }) => {
     const [ itemQuantity, setItemQuantity ] = useState(1);
     const [ errorMessage, setErrorMessage ] = useState('');
 
+    const [ orderSuccess, setOrderSuccess ] = useState(false);
+
+    const [ isScrolled, setIsScrolled ] = useState(false);
+
+    const [ allProducts, setAllProducts ] = useState([]);
+    const [ jewProducts, setJewProducts ] = useState([]);
+    const [ electronicProducts, setElectronicProducts ] = useState([]);
+    const [ menProducts, setMenProducts ] = useState([]);
+    const [ womenProducts, setWomenProducts ] = useState([]);
+
     useEffect(() => {
 
         const getProducts = async () => {
@@ -196,6 +206,16 @@ const ContextDataProvider = ({ children }) => {
 
     const onCartOpen = () => setOnCartMenuOpen(true);
 
+    const fromFinalPageGoBack = () => {
+
+        setOrderSuccess(false);
+        
+        const updatedCart = [];
+        localStorage.setItem('cart', JSON.stringify(updatedCart));
+        setCart(updatedCart);
+        
+    }
+
     return (
         <Context.Provider
             value={{ 
@@ -209,7 +229,13 @@ const ContextDataProvider = ({ children }) => {
                 cartLength, totalCartPrice, removeFromCart,
                 itemQuantity, setItemQuantity,
                 onQuantityIncrease, onQuantityDecrease,
-                errorMessage, setErrorMessage
+                errorMessage, setErrorMessage,
+                orderSuccess, setOrderSuccess,
+                fromFinalPageGoBack, isScrolled, setIsScrolled,
+                setAllProducts, setJewProducts, electronicProducts,
+                setMenProducts, setWomenProducts, setLoading,
+                allProducts, jewProducts, menProducts, 
+                womenProducts,setElectronicProducts, 
             }}
         >
             { children }

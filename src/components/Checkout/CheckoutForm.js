@@ -11,7 +11,7 @@ import '../../styles/Checkout/CheckoutForm.scss';
 
 const CheckoutForm = () => {
 
-  const { cart } = useContext(Context); 
+  const { cart, setOrderSuccess } = useContext(Context); 
 
   const initialValues = {
     fullName: '',
@@ -110,7 +110,7 @@ const CheckoutForm = () => {
       message: emailContent,
     }, userId)
       .then(() => {
-        alert('Email sent successfully!');
+        setOrderSuccess(true);
         resetForm();
       })
       .catch(() => {
@@ -120,52 +120,6 @@ const CheckoutForm = () => {
         setSubmitting(false);
       });
   };
-
-  // const onSubmit = (values, { setSubmitting, resetForm }) => {
-
-  //   console.log("CART_ITEM: ", cartItem );
-  
-  //   const emailContent = `
-  //     <html>
-  //       <body>
-  //         <h1>Order details</h1>
-  //         <div>
-  //           ${cartItem}
-  //         </div>
-  //         <div>
-  //           <p>Name: ${values.fullName}</p>
-  //           <p>Email: ${values.email}</p>
-  //           <p>Street: ${values.street}</p>
-  //           <p>City: ${values.city}</p>
-  //           <p>State: ${values.state}</p>
-  //           <p>Zip: ${values.zip}</p>
-  //           <p>Country: ${values.country.label}</p>
-  //           <p>Phone: ${values.phone}</p>
-  //         </div>
-  //       </body>
-  //     </html>
-  //   `;
-
-  //   const serviceId = "service_kxmglya";
-  //   const templateId = "zakazgerm_gmail";
-  //   const userId = "X6BZThkDbGkN2NKjC";
-
-  //   emailjs.send(serviceId, templateId, {
-  //     from_name: values.fullName,
-  //     to_name: 'gdarko999666@gmail.com',
-  //     message_html: emailContent,
-  //   }, userId)
-  //     .then(() => {
-  //       alert('Email sent successfully!');
-  //       resetForm();
-  //     })
-  //     .catch(() => {
-  //       alert('Failed to send email');
-  //     })
-  //     .finally(() => {
-  //       setSubmitting(false);
-  //     });
-  // };
 
   return (
     <div className='checkout-form-container'>

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { Context } from '../context/Context.js';
 import { Link } from "react-router-dom";
 
@@ -14,10 +14,25 @@ import '../styles/Header.scss';
 
 const Header = () => {
 
-  const { cartItemsTotal, cart, onCartMenuOpen } = useContext(Context); 
+  const { cartItemsTotal, cart, onCartMenuOpen, isScrolled, setIsScrolled } = useContext(Context); 
+  
+  useEffect(() => {
+    function handleScroll() {
+      const currentPosition = window.pageYOffset;
+      setIsScrolled(currentPosition > 50);
+    }
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  const headerClassName = isScrolled ? "header down" : "header";
 
   return (
-    <section className='header'>
+    <section className={headerClassName}>
       
       <nav className="navbar">
 

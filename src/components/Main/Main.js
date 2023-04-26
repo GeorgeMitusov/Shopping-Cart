@@ -1,13 +1,17 @@
-import React, { useEffect } from 'react';
+import React, { useContext, useEffect } from 'react';
+import { Context } from '../../context/Context';
+
 import { motion } from 'framer-motion';
 
 import MainBox from './MainBox';
-import ProductsList from './ProductsList';
 import Footer from '../Footer';
+import ProductsList from '../ProductsList';
 
 import '../../styles/Main/Main.scss';
 
 const Main = () => {
+
+  const { allProducts } = useContext(Context);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -24,7 +28,7 @@ const Main = () => {
 
       <MainBox />
 
-      <ProductsList />
+      <ProductsList productData={allProducts} title="All products" />
 
       <Footer />
 
