@@ -6,6 +6,11 @@
     padding-bottom: 6rem;
     // border: 1px solid purple;
 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     h1 {
         margin: 1rem 0 2rem 1rem;
     }
@@ -13,10 +18,10 @@
     .products-list-box {
         width: 100%;
         height: auto;
-        // border: 3px solid teal;
+        // border: 3px solid fuchsia;
 
         display: flex;
         flex-wrap: wrap;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 }

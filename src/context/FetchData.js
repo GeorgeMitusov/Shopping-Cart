@@ -4,7 +4,7 @@ import { Context } from './Context';
 const FetchData = () => {
 
     const { setAllProducts, setJewProducts, setElectronicProducts,
-        setMenProducts, setWomenProducts, setLoading } = useContext(Context);
+        setMenProducts, setWomenProducts, setLoading, isLoadMore } = useContext(Context);
 
     useEffect(() => {
 
@@ -91,8 +91,33 @@ const FetchData = () => {
       
     }, [])
 
+    useEffect(() => {
+
+        const getAllProducts = async () => {
+
+            setLoading(true);
+
+            const productsFromServer = await fetchMoreAllProducts();
+            
+            setAllProducts( prevState => [ ...prevState, ...productsFromServer ])
+
+            setLoading(false);
+        }
+
+        getAllProducts();
+      
+    }, [isLoadMore])
+
     const fetchAllProducts = async () => {
         const res = await fetch('https://fakestoreapi.com/products');
+    
+        const data = await res.json();
+    
+        return data;
+    }
+
+    const fetchMoreAllProducts = async () => {
+        const res = await fetch('https://fakestoreapi.com/products?limit=10&offset=20');
     
         const data = await res.json();
     
@@ -135,10 +160,3 @@ const FetchData = () => {
 }
 
 export default FetchData;
-    
-
-
-
-
-
-

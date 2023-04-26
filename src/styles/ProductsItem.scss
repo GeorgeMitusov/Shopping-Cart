@@ -7,7 +7,8 @@
     border-radius: 1rem;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     overflow: hidden;
-    border: 1px solid lightgray;
+    border: 1px solid var(--lightgray-color);
+    background-color: var(--white-color);
 
     &:hover {
         
@@ -47,6 +48,7 @@
         .product-item-title {
             font-size: .9rem;
             transition: color .3s ease-in-out;
+            // border: 1px solid red;
         }
 
         .product-item-price {

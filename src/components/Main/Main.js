@@ -11,7 +11,7 @@ import '../../styles/Main/Main.scss';
 
 const Main = () => {
 
-  const { allProducts } = useContext(Context);
+  const { allProducts, loading, setIsLoadMore, isLoadMore } = useContext(Context);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -29,6 +29,15 @@ const Main = () => {
       <MainBox />
 
       <ProductsList productData={allProducts} title="All products" />
+
+      { !isLoadMore && (
+        <button 
+          className='products-list-load-more-btn'
+          onClick={() => setIsLoadMore(true)}
+        > 
+          { loading ? 'Loading...' : 'Load more...' } 
+        </button>
+      )}
 
       <Footer />
 

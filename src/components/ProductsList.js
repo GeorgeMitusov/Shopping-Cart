@@ -4,7 +4,7 @@ import { Context } from '../context/Context';
 import LoaderSmall from './LoaderSmall';
 import UniItem from './ProductItem';
 
-import '../styles/Main/ProductsList.scss';
+import '../styles/ProductsList.scss';
 
 const ProductsList = ({ productData, title }) => {
 
@@ -23,6 +23,7 @@ const ProductsList = ({ productData, title }) => {
             <ul className='products-list-box'>
                 { link }
             </ul>
+
         </div>
     )
 }

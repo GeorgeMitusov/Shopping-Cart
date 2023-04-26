@@ -52,6 +52,8 @@ const ContextDataProvider = ({ children }) => {
     const [ menProducts, setMenProducts ] = useState([]);
     const [ womenProducts, setWomenProducts ] = useState([]);
 
+    const [ isLoadMore, setIsLoadMore ] = useState(false);
+
     useEffect(() => {
 
         const getProducts = async () => {
@@ -235,7 +237,8 @@ const ContextDataProvider = ({ children }) => {
                 setAllProducts, setJewProducts, electronicProducts,
                 setMenProducts, setWomenProducts, setLoading,
                 allProducts, jewProducts, menProducts, 
-                womenProducts,setElectronicProducts, 
+                womenProducts,setElectronicProducts,
+                isLoadMore, setIsLoadMore 
             }}
         >
             { children }
