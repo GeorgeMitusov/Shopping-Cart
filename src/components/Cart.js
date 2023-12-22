@@ -1,99 +1,106 @@
-import React, { useContext } from 'react';
-import { Context } from '../context/Context.js';
+import React, { useContext } from "react";
+import { Context } from "../context/Context.js";
 
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import { IonIcon } from '@ionic/react';
-import { closeOutline, trashOutline } from 'ionicons/icons';
+import { IonIcon } from "@ionic/react";
+import { closeOutline, trashOutline } from "ionicons/icons";
 
 import { motion, AnimatePresence } from "framer-motion";
 
-import '../styles/Cart.scss';
+import "../styles/Cart.scss";
 
 const Cart = () => {
-
-  const { onCartClose, cart, onCartItemDelete, totalCartPrice, removeFromCart, addToCart } = useContext(Context); 
+  const {
+    onCartClose,
+    cart,
+    onCartItemDelete,
+    totalCartPrice,
+    removeFromCart,
+    addToCart,
+  } = useContext(Context);
 
   const cartVars = {
-    initial: {  opacity: 0 },
-    enter: { 
+    initial: { opacity: 0 },
+    enter: {
       opacity: 1,
       transition: {
         duration: 1,
-        type: 'tween'
-      }
+        type: "tween",
+      },
     },
-    exit: { opacity: 0 }
+    exit: { opacity: 0 },
   };
 
   const cartItemVars = {
-    initial: {  scale: 0, opacity: 0 },
+    initial: { scale: 0, opacity: 0 },
     enter: {
-      scale: 1, 
+      scale: 1,
       opacity: 1,
       transition: {
         duration: 1,
-        type: 'tween'
-      }
+        type: "tween",
+      },
     },
-    exit: { 
-      scale: 0, 
+    exit: {
+      scale: 0,
       opacity: 0,
       transition: {
         duration: 1,
-        type: 'tween'
-      }
-    }
+        type: "tween",
+      },
+    },
   };
 
   const emptyTitleVars = {
-    initial: {  scale: 0, opacity: 0 },
+    initial: { scale: 0, opacity: 0 },
     enter: {
-      scale: 1, 
+      scale: 1,
       opacity: 1,
       transition: {
         duration: 1.5,
-        delay: .5,
-        type: 'tween'
-      }
+        delay: 0.5,
+        type: "tween",
+      },
     },
-    exit: { 
-      scale: 0, 
+    exit: {
+      scale: 0,
       opacity: 0,
       transition: {
-        duration: .5,
-        type: 'tween'
-      }
-    }
+        duration: 0.5,
+        type: "tween",
+      },
+    },
   };
 
-  const cartItem = cart.map( ( i, id ) => (
-    <motion.li 
-      key={id} 
+  const cartItem = cart.map((i, id) => (
+    <motion.li
+      key={id}
       className="cart-menu-list-item"
       variants={cartItemVars}
       initial="initial"
-      animate='enter'
-      exit='exit'
+      animate="enter"
+      exit="exit"
     >
-
-      <div className='cart-menu-list-item-left'>
+      <div className="cart-menu-list-item-left">
         <img src={i.image} alt="#" />
       </div>
 
-      <div className='cart-menu-list-item-right'>
-
-        <div className='cart-menu-list-item-top'>
-          <h1> { i.title.slice(0, 27) } </h1>
-          <h4> ${ i.price.toFixed(0) } </h4>
+      <div className="cart-menu-list-item-right">
+        <div className="cart-menu-list-item-top">
+          <h1> {i.title.slice(0, 27)} </h1>
+          <h4> ${i.price.toFixed(0)} </h4>
         </div>
 
-        <div className='cart-menu-list-item-btm'>
-          <button onClick={ () => onCartItemDelete(i)}>
+        <div className="cart-menu-list-item-btm">
+          <button onClick={() => onCartItemDelete(i)}>
             <IonIcon icon={trashOutline} className="btn-icon" />
           </button>
           <div className="custom-input-container">
-            <button className="custom-input-button" onClick={() => removeFromCart(i)}>
+            <button
+              className="custom-input-button"
+              onClick={() => removeFromCart(i)}
+            >
               -
             </button>
             <input
@@ -103,133 +110,87 @@ const Cart = () => {
               max="10"
               value={i.qty}
             />
-            <button className="custom-input-button" onClick={() => addToCart(i)}>
+            <button
+              className="custom-input-button"
+              onClick={() => addToCart(i)}
+            >
               +
             </button>
           </div>
         </div>
-
       </div>
-
     </motion.li>
-  ))
+  ));
 
-  const cartItemDisplay = ( 
+  const cartItemDisplay = (
     <AnimatePresence>
-      {
-        cart.length === 0 ? (
-          <motion.h1 
-            className='cart-empty-title'
-            variants={emptyTitleVars}
-            initial="initial"
-            animate='enter'
-            exit='exit'
-          > 
-            Your cart is empty now. 
-          </motion.h1> ) : cartItem 
-      }
+      {cart.length === 0 ? (
+        <motion.h1
+          className="cart-empty-title"
+          variants={emptyTitleVars}
+          initial="initial"
+          animate="enter"
+          exit="exit"
+        >
+          Your cart is empty now.
+        </motion.h1>
+      ) : (
+        cartItem
+      )}
     </AnimatePresence>
-  )
- 
+  );
+
   return (
-    <motion.section 
-      className='cart'
+    <motion.section
+      className="cart"
       variants={cartVars}
       initial="initial"
-      animate='enter'
-      exit='exit'
+      animate="enter"
+      exit="exit"
     >
+      <div className="cart-wrap">
+        <div className="cart-overlay" onClick={onCartClose}></div>
 
-      <div className='cart-wrap'>
-
-        <div className='cart-overlay' onClick={onCartClose}></div>
-
-        <div className='cart-menu'>
-
-          <div className='cart-menu-top'>
-
+        <div className="cart-menu">
+          <div className="cart-menu-top">
             <h1> Your Cart </h1>
 
-            <IonIcon 
-              icon={closeOutline} 
-              className="cart-menu-close" 
+            <IonIcon
+              icon={closeOutline}
+              className="cart-menu-close"
               onClick={onCartClose}
             />
-
           </div>
 
-          <div className='cart-menu-mid'>
-
-            <ul className='cart-menu-list-items'>
-
-              { cartItemDisplay }
-
-            </ul>
-
+          <div className="cart-menu-mid">
+            <ul className="cart-menu-list-items">{cartItemDisplay}</ul>
           </div>
 
-          <div className='cart-menu-btm'>
-
-            <div className='cart-menu-above'>
+          <div className="cart-menu-btm">
+            <div className="cart-menu-above">
               <h1> Subtotal </h1>
-              <h4> $ { totalCartPrice().toFixed(0) } </h4>
+              <h4> $ {totalCartPrice().toFixed(0)} </h4>
             </div>
 
-            <div className='cart-menu-under'>
-              <button className='cart-go-to-check-btn'>
-                <Link 
-                  className="menu-item" 
+            <div className="cart-menu-under">
+              <button className="cart-go-to-check-btn">
+                <Link
+                  className="menu-item"
                   to="/checkout"
                   onClick={onCartClose}
                 >
-                  Continue to Checkout 
-                </Link> 
+                  Continue to Checkout
+                </Link>
               </button>
             </div>
-
           </div>
-
         </div>
-
       </div>
-      
     </motion.section>
-  )
-}
+  );
+};
 
 export default Cart;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 // import React, { useContext } from 'react';
 // import { Context } from '../context/Context.js';
@@ -249,21 +210,21 @@ export default Cart;
 // import '../styles/Cart.scss';
 
 // const Cart = () => {
- 
+
 //   return (
-//     <Menu 
+//     <Menu
 //       id="cart"
 //       right
 //       customBurgerIcon={<CartBurgerIcon />}
 //       className={ 'cart' }
 //       burgerButtonClassName={ "cart-burger-btn" }
-//       burgerBarClassName={ "cart-burger-bar" } 
-//       crossButtonClassName={ "cart-cross-btn" } 
-//       crossClassName={ "cart-cross" } 
-//       menuClassName={ "cart-menu" } 
-//       morphShapeClassName={ "cart-morph" } 
-//       itemListClassName={ "cart-item-list" } 
-//       overlayClassName={ "cart-overlay" } 
+//       burgerBarClassName={ "cart-burger-bar" }
+//       crossButtonClassName={ "cart-cross-btn" }
+//       crossClassName={ "cart-cross" }
+//       menuClassName={ "cart-menu" }
+//       morphShapeClassName={ "cart-morph" }
+//       itemListClassName={ "cart-item-list" }
+//       overlayClassName={ "cart-overlay" }
 //     >
 
 //       <h1> Your cart </h1>
@@ -273,7 +234,7 @@ export default Cart;
 //       <li> second </li>
 
 //       <li> third </li>
-      
+
 //     </Menu>
 //   )
 // }

@@ -1,144 +1,105 @@
 .side-menu {
-    // border: 1px solid red;
+  .menu-item {
+    color: var(--white-color);
+    font-size: 1.5rem;
+    margin: 1rem;
+    transition: all 0.5s ease-in-out;
 
-    .menu-item {
-        // border: 1px solid white;
+    &:hover {
+      color: var(--dblue-color);
+    }
+  }
 
+  .header-categories-list {
+    width: 100%;
+    min-height: 120px;
+    margin-top: -1rem;
+
+    .header-categories-item {
+      padding: 1rem;
+
+      .header-categories-item-link {
         color: var(--white-color);
-        font-size: 1.5rem;
-        margin: 1rem;
-        transition: all .5s ease-in-out;
+        padding: 1rem;
+        transition: all 0.5s ease-in-out;
+        font-size: 1.1rem;
 
         &:hover {
-            color: var(--dblue-color);
+          color: var(--dblue-color);
         }
+      }
     }
-
-    .header-categories-list {
-        width: 100%;
-        min-height: 120px;
-        // border: 1px solid fuchsia;
-        margin-top: -1rem;
-
-        .header-categories-item {
-            // border: 1px solid blue;
-            padding: 1rem;
-
-            .header-categories-item-link {
-                // border: 1px solid yellow;
-                color: var(--white-color);
-                padding: 1rem;
-                transition: all .5s ease-in-out;
-                font-size: 1.1rem;
-
-                &:hover {
-                    color: var(--dblue-color);
-                }
-            }
-        }        
-    }
+  }
 }
 
 .bm-burger-button {
-    position: fixed;
-    width: 36px;
-    height: 30px;
-    right: 6.7rem;
-    top: 1.5rem;
-    z-index: 100 !important;
+  position: fixed;
+  width: 36px;
+  height: 30px;
+  right: 6.7rem;
+  top: 1.5rem;
+  z-index: 100 !important;
 }
-  
+
 .bm-burger-bars {
-    background: var(--dark-dblue-color);
-    transition: all .5s ease-in-out;
+  background: var(--dark-dblue-color);
+  transition: all 0.5s ease-in-out;
 }
-  
+
 .bm-burger-bars-hover {
-    background: var(--dblue-color);
+  background: var(--dblue-color);
 }
-  
+
 .bm-cross {
-    background: var(--white-color);
+  background: var(--white-color);
 }
 
 .bm-menu-wrap {
-    // border: 1px solid green;
-    position: fixed;
-    top: 0;
-    height: 100%;
+  position: fixed;
+  top: 0;
+  height: 100%;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-  
+
 .bm-menu {
-    // border: 1px solid yellow;
-    background: var(--dark-dblue-color);
+  background: var(--dark-dblue-color);
 }
-  
-.bm-morph-shape {
-    fill: var(--dark-dblue-color);
-}
-  
-.bm-item-list {
-    // border: 1px solid black;
-    width: 155% !important;
-    min-height: 30vh !important;
-    padding-top: 3rem;
-    margin-top: 3rem;
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
+.bm-morph-shape {
+  fill: var(--dark-dblue-color);
+}
+
+.bm-item-list {
+  width: 155% !important;
+  min-height: 30vh !important;
+  padding-top: 3rem;
+  margin-top: 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .side-menu-overlay {
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 999;
-    top: 0;
-    left: 0;
-    cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  top: 0;
+  left: 0;
+  cursor: pointer;
 }
-  
-// .bm-overlay {
-//     background: var(--black-color);
-// }
-
-@media screen and (max-width: 1700px) {}
-
-@media screen and (max-width: 1550px) {}
-
-@media screen and (max-width: 1440px) {}
 
 @media screen and (max-width: 1050px) {
-    .bm-burger-button {
-        right: 7%;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .bm-burger-button {
-        // right: 10%;
-    }
-}
-
-@media screen and (max-width: 550px) {
-    .bm-burger-button {
-        // right: 25%;
-    }
+  .bm-burger-button {
+    right: 7%;
+  }
 }
 
 @media screen and (max-width: 425px) {
-    .bm-burger-button {
-        right: 5%;
-    }
+  .bm-burger-button {
+    right: 5%;
+  }
 }
-
-@media screen and (max-width: 375px) {
-    .bm-burger-button {
-    }
-}
-    
-@media screen and (max-width: 320px) {}
