@@ -6,107 +6,107 @@ const FetchData = () => {
     const { setAllProducts, setJewProducts, setElectronicProducts,
         setMenProducts, setWomenProducts, setLoading, isLoadMore } = useContext(Context);
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getAllProducts = async () => {
+    //     const getAllProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchAllProducts();
+    //         const productsFromServer = await fetchAllProducts();
             
-            setAllProducts(productsFromServer);
+    //         setAllProducts(productsFromServer);
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getAllProducts();
+    //     getAllProducts();
       
-    }, [])
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getJewProducts = async () => {
+    //     const getJewProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchJewProducts();
+    //         const productsFromServer = await fetchJewProducts();
             
-            setJewProducts(productsFromServer);
+    //         setJewProducts(productsFromServer);
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getJewProducts();
+    //     getJewProducts();
       
-    }, [])
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getElectrProducts = async () => {
+    //     const getElectrProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchElectronicProducts();
+    //         const productsFromServer = await fetchElectronicProducts();
             
-            setElectronicProducts(productsFromServer);
+    //         setElectronicProducts(productsFromServer);
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getElectrProducts();
+    //     getElectrProducts();
       
-    }, [])
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getMenProducts = async () => {
+    //     const getMenProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchMenProducts();
+    //         const productsFromServer = await fetchMenProducts();
             
-            setMenProducts(productsFromServer);
+    //         setMenProducts(productsFromServer);
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getMenProducts();
+    //     getMenProducts();
       
-    }, [])
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getWomenProducts = async () => {
+    //     const getWomenProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchWomenProducts();
+    //         const productsFromServer = await fetchWomenProducts();
             
-            setWomenProducts(productsFromServer);
+    //         setWomenProducts(productsFromServer);
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getWomenProducts();
+    //     getWomenProducts();
       
-    }, [])
+    // }, [])
 
-    useEffect(() => {
+    // useEffect(() => {
 
-        const getAllProducts = async () => {
+    //     const getAllProducts = async () => {
 
-            setLoading(true);
+    //         setLoading(true);
 
-            const productsFromServer = await fetchMoreAllProducts();
+    //         const productsFromServer = await fetchMoreAllProducts();
             
-            setAllProducts( prevState => [ ...prevState, ...productsFromServer ])
+    //         setAllProducts( prevState => [ ...prevState, ...productsFromServer ])
 
-            setLoading(false);
-        }
+    //         setLoading(false);
+    //     }
 
-        getAllProducts();
+    //     getAllProducts();
       
-    }, [isLoadMore])
+    // }, [isLoadMore])
 
     const fetchAllProducts = async () => {
         const res = await fetch('https://fakestoreapi.com/products');

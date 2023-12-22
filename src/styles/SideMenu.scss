@@ -105,3 +105,40 @@
 // .bm-overlay {
 //     background: var(--black-color);
 // }
+
+@media screen and (max-width: 1700px) {}
+
+@media screen and (max-width: 1550px) {}
+
+@media screen and (max-width: 1440px) {}
+
+@media screen and (max-width: 1050px) {
+    .bm-burger-button {
+        right: 7%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .bm-burger-button {
+        // right: 10%;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .bm-burger-button {
+        // right: 25%;
+    }
+}
+
+@media screen and (max-width: 425px) {
+    .bm-burger-button {
+        right: 5%;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .bm-burger-button {
+    }
+}
+    
+@media screen and (max-width: 320px) {}

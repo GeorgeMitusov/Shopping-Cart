@@ -1,10 +1,11 @@
-import React from 'react';
+import React from "react";
+import { Link as ScrollLink } from "react-scroll";
 
-import '../../styles/Main/MainBox.scss';
+import "../../styles/Main/MainBox.scss";
 
 const MainBox = () => {
 
-  return (
+   return (
     <div className='main-box'>
 
         <div className='main-box-left'>
@@ -15,11 +16,20 @@ const MainBox = () => {
 
             <div className='main-box-left-wrap-descr'>
 
-              <h1> BASIC TITLE </h1>
+              <h1> Exciting New Arrivals! </h1>
 
-              <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi porttitor aliquam sapien, id egestas justo facilisis a. Cras fringilla pulvinar semper. Sed lobortis euismod quam, eget vehicula nibh. Vivamus eget sollicitudin sem. Praesent vehicula imperdiet elit. Duis viverra imperdiet urna, quis pulvinar urna lobortis et. Maecenas a turpis diam. Maecenas consectetur eleifend convallis. Mauris sit amet orci suscipit, viverra nisl aliquam, porttitor lorem. </p>
-              
-              <button> Explore collection </button>
+              <p> Discover our latest collection featuring trendy styles, vibrant colors, and comfortable designs. Elevate your wardrobe with our newest arrivals that reflect the latest fashion trends. From casual wear to formal attire, find the perfect outfit for any occasion. </p>
+
+              <ScrollLink
+                className="main-box-link"
+                to="section1"
+                smooth={true}
+                duration={2000}
+                spy={true}
+                offset={-80}
+              >
+                <button> Explore collection </button>
+              </ScrollLink>
 
             </div>
 
@@ -31,6 +41,6 @@ const MainBox = () => {
 
     </div>
   )
-}
+};
 
-export default MainBox
+export default MainBox;

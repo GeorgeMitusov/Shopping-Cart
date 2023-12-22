@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { Context } from '../context/Context';
 
+
 import LoaderSmall from './LoaderSmall';
 import UniItem from './ProductItem';
 
@@ -19,6 +20,8 @@ const ProductsList = ({ productData, title }) => {
     return (
         <div className='products-list'>
             <h1> { title } </h1>
+
+            <section id="section1"></section>
 
             <ul className='products-list-box'>
                 { link }
