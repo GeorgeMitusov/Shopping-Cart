@@ -1,49 +1,74 @@
 .scrollToTopBtn {
-    width: 3%;
-    height: 60px;
-    line-height: 60px;
-    background-color: var(--dblue-color);
-    color: var(--white-color);
-    text-align: center;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: background-color .4s ease-in-out;
+  width: 3%;
+  height: 3.5rem;
+  line-height: 60px;
+  background-color: var(--dblue-color);
+  color: var(--white-color);
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.4s ease-in-out;
 
-    border: 0 none;
+  border: 0 none;
 
-    position: fixed;
-    bottom: 30px;
-    right: 30px;    
-    z-index: 20;
+  position: fixed;
+  bottom: 1rem;
+  right: 1%;
+  z-index: 20;
 
-    &:hover {
-        background-color: var(--dark-dblue-color);
-    }
+  &:hover {
+    background-color: var(--dark-dblue-color);
+  }
 }
 
-@media screen and ( max-width: 1550px ) {
-    .scrollToTopBtn {
-        width: 4%;
-    }
+@media screen and (max-width: 1700px) {
+  .scrollToTopBtn {
+    width: 3.5%;
+  }
 }
 
-@media screen and ( max-width: 1050px ) {
-    .scrollToTopBtn {
-        width: 6%;
-    }
+@media screen and (max-width: 1440px) {
+  .scrollToTopBtn {
+    width: 4%;
+  }
 }
 
-@media screen and ( max-width: 700px ) {
-    .scrollToTopBtn {
-        width: 9%;
-    }
+@media screen and (max-width: 1050px) {
+  .scrollToTopBtn {
+    width: 6%;
+  }
 }
 
-@media screen and ( max-width: 550px ) {
-    .scrollToTopBtn {
-        width: 12%;
+@media screen and (max-width: 768px) {
+  .scrollToTopBtn {
+    width: 8%;
+  }
+}
 
-        bottom: 0;
-        right: 0;
-    }
+@media screen and (max-width: 550px) {
+  .scrollToTopBtn {
+    width: 10.5%;
+
+    bottom: 0.5rem;
+    right: 1.5%;
+  }
+}
+
+@media screen and (max-width: 425px) {
+  .scrollToTopBtn {
+    width: 12%;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .scrollToTopBtn {
+    width: 14%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .scrollToTopBtn {
+    width: 16%;
+  }
 }

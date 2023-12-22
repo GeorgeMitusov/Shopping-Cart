@@ -39,7 +39,7 @@ const Main = () => {
         </button>
       )}
 
-      {/* <Footer /> */}
+      <Footer />
 
     </motion.div>
   )

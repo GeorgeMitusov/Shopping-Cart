@@ -54,56 +54,56 @@ const ContextDataProvider = ({ children }) => {
 
     const [ isLoadMore, setIsLoadMore ] = useState(false);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     const getProducts = async () => {
+        const getProducts = async () => {
 
-    //         const productsFromServer = await fetchProducts();
+            const productsFromServer = await fetchProducts();
             
-    //         setProducts(productsFromServer);
+            setProducts(productsFromServer);
 
-    //         setLoading(false);
-    //     }
+            setLoading(false);
+        }
 
-    //     getProducts();
+        getProducts();
 
-    // }, [])
+    }, [])
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     localStorage.setItem('products', JSON.stringify(products));
+        localStorage.setItem('products', JSON.stringify(products));
 
-    // }, [products]);
+    }, [products]);
 
-    // useEffect(() => {
+    useEffect(() => {
 
-    //     // localStorage.setItem('selectedItem', JSON.stringify(selectedItem));
-    //     const storedItem  = JSON.parse(localStorage.getItem('selectedItem'));
+        // localStorage.setItem('selectedItem', JSON.stringify(selectedItem));
+        const storedItem  = JSON.parse(localStorage.getItem('selectedItem'));
 
-    //     if (storedItem ) {
-    //         setSelectedItem(storedItem );
-    //     }
+        if (storedItem ) {
+            setSelectedItem(storedItem );
+        }
 
-    // }, []);
+    }, []);
 
-    // useEffect(() => {
-    //     const storedCart = JSON.parse(localStorage.getItem('cart'));
+    useEffect(() => {
+        const storedCart = JSON.parse(localStorage.getItem('cart'));
 
-    //     if (storedCart) {
-    //       setCart(storedCart);
-    //     }
+        if (storedCart) {
+          setCart(storedCart);
+        }
 
-    // }, []);
+    }, []);
 
-    // const fetchProducts = async () => {
+    const fetchProducts = async () => {
 
-    //     const res = await fetch('https://fakestoreapi.com/products');
+        const res = await fetch('https://fakestoreapi.com/products');
 
-    //     const data = await res.json();
+        const data = await res.json();
 
-    //     return data;
+        return data;
 
-    // }
+    }
 
     const onDetailView = item => {
         localStorage.setItem('selectedItem', JSON.stringify(item));

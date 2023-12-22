@@ -32,7 +32,7 @@ const AnimatedRoutes = ({ error }) => {
         <>
             { !orderSuccess && <Header />}
 
-            <ScrollToTopBtn />
+            {/* <ScrollToTopBtn /> */}
 
             <FetchData />
 
