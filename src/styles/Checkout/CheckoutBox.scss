@@ -1,44 +1,77 @@
 .checkout-box {
-    width: 100%;
-    height: auto;
-    background-color: var(--white-color);
-    // background-color: slateblue;
-    border: 5px solid black;
+  width: 100%;
+  height: auto;
+  background-color: var(--white-color);
 
-    display: flex;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+
+  .checkout-go-back-btn {
+    width: 5%;
+    height: 80vh;
+
+    position: fixed;
+    top: 8rem;
+    left: 2rem;
+
+    z-index: 99;
+
+    font-size: 2rem;
+
+    border: 3px ridge var(--dblue-color);
+    background-color: var(--dark-dblue-color);
+    cursor: pointer;
+    opacity: 0.05;
+
+    transition: opacity 0.9s ease-in-out;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--dark-dblue-color);
+    }
+
+    .checkout-go-back-btn-icon {
+      color: var(--white-color);
+    }
+  }
+}
+
+@media screen and (max-width: 1700px) {
+}
+
+@media screen and (max-width: 1550px) {
+}
+
+@media screen and (max-width: 1440px) {
+}
+
+@media screen and (max-width: 1050px) {
+}
+
+@media screen and (max-width: 768px) {
+  .checkout-box {
+    flex-direction: column;
+    align-items: flex-start;
     justify-content: center;
-    align-items: start;
 
     .checkout-go-back-btn {
-        width: 5%;
-        height: 80vh;
-
-        position: fixed;
-        top: 8rem;
-        left: 2rem;
-
-        z-index: 99;
-
-        font-size: 2rem;
-
-        border: 3px ridge var(--dblue-color);
-        background-color: var(--dark-dblue-color);
-        cursor: pointer;
-        opacity: .05;
-
-        transition: opacity .9s ease-in-out;
-
-        &:hover {
-            opacity: 1;
-        }
-
-        &:focus {
-            outline: none;
-            box-shadow: 0 0 0 2px #fff, 0 0 0 4px var(--dark-dblue-color);
-        }
-
-        .checkout-go-back-btn-icon {
-            color: var(--white-color);
-        }
     }
+  }
+}
+
+@media screen and (max-width: 550px) {
+}
+
+@media screen and (max-width: 425px) {
+}
+
+@media screen and (max-width: 375px) {
+}
+
+@media screen and (max-width: 320px) {
 }
