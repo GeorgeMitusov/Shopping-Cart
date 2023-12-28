@@ -5,7 +5,7 @@
 
   display: flex;
   justify-content: center;
-  align-items: start;
+  align-items: flex-start;
 
   .checkout-go-back-btn {
     width: 5%;
@@ -41,37 +41,10 @@
   }
 }
 
-@media screen and (max-width: 1700px) {
-}
-
-@media screen and (max-width: 1550px) {
-}
-
-@media screen and (max-width: 1440px) {
-}
-
-@media screen and (max-width: 1050px) {
-}
-
 @media screen and (max-width: 768px) {
   .checkout-box {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-
-    .checkout-go-back-btn {
-    }
   }
-}
-
-@media screen and (max-width: 550px) {
-}
-
-@media screen and (max-width: 425px) {
-}
-
-@media screen and (max-width: 375px) {
-}
-
-@media screen and (max-width: 320px) {
 }
